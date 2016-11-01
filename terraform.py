@@ -567,6 +567,8 @@ def azure_host(resource, module_name):
         'ansible_ssh_host': raw_attrs['tags.ipAddr'],
     }
 
+    groups.append('role=' + raw_attrs['tags.role'])
+
     return name, attrs, groups
 
 @parses('clc_server')
